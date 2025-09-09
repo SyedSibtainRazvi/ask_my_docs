@@ -10,17 +10,32 @@ import { formatDocumentsAsString } from "langchain/util/document";
 
 export async function buildRAGChain() {
   const vs = await getVectorStore();
-  const retriever = vs.asRetriever({ k: 8 });
+  // Increase the number of retrieved documents for better coverage
+  const retriever = vs.asRetriever({ k: 12 });
 
   const prompt = ChatPromptTemplate.fromMessages([
     [
       "system",
-      "Answer strictly from provided context. If not in context, say you don't know. Cite as [doc:{docId} p:{page}].",
+      `You are a helpful assistant that answers questions based on the provided context from documents. 
+      
+      Instructions:
+      - If the user greets you (hi, hello, hey, etc.), respond warmly and ask how you can help them with their documents
+      - Answer ONLY based on the information provided in the context when asked about document content
+      - If the information is not in the context, say "I don't have that information in the provided documents"
+      - Be specific and direct in your answers
+      - If asked about names, look for any names mentioned in the context
+      - If asked about specific details, extract the exact information from the context
+      - Always be helpful and friendly
+      
+      Context: {context}`,
     ],
-    ["human", "Question: {question}\n\nContext:\n{context}"],
+    ["human", "Question: {question}"],
   ]);
 
-  const llm = new ChatOpenAI({ model: "gpt-4o-mini", temperature: 0.2 });
+  const llm = new ChatOpenAI({
+    model: "gpt-4o-mini",
+    temperature: 0.1,
+  });
 
   return RunnableSequence.from([
     {

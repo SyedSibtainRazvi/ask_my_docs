@@ -9,7 +9,7 @@ export async function getVectorStore() {
   const client = new Pinecone({ apiKey: process.env.PINECONE_API_KEY! });
   const index = client.index(process.env.PINECONE_INDEX!);
   store = await PineconeStore.fromExistingIndex(
-    new OpenAIEmbeddings({ model: "text-embedding-3-large" }),
+    new OpenAIEmbeddings({ model: "text-embedding-3-small" }), // Changed to small
     { pineconeIndex: index }
   );
   return store;

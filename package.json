@@ -1,0 +1,35 @@
+{
+  "name": "ask_my_docs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "@langchain/community": "^0.3.55",
+    "@langchain/openai": "^0.6.11",
+    "@langchain/pinecone": "^0.2.0",
+    "@pinecone-database/pinecone": "^6.1.2",
+    "ai": "^5.0.38",
+    "dotenv": "^17.2.2",
+    "langchain": "^0.3.33",
+    "next": "15.5.2",
+    "openai": "^5.20.0",
+    "pdfjs-dist": "^5.4.149",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

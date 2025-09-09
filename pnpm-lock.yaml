@@ -11,6 +11,9 @@ importers:
       '@langchain/community':
         specifier: ^0.3.55
         version: 0.3.55(@browserbasehq/sdk@2.6.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.55.0)(deepmerge@4.3.1)(dotenv@17.2.2)(openai@5.20.0(ws@8.18.3)(zod@3.25.76))(zod@3.25.76))(@ibm-cloud/watsonx-ai@1.6.12)(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(openai@5.20.0(ws@8.18.3)(zod@3.25.76)))(@opentelemetry/api@1.9.0)(@pinecone-database/pinecone@6.1.2)(axios@1.11.0)(ibm-cloud-sdk-core@5.4.2)(jsonwebtoken@9.0.2)(openai@5.20.0(ws@8.18.3)(zod@3.25.76))(playwright@1.55.0)(weaviate-client@3.8.1)(ws@8.18.3)
+      '@langchain/core':
+        specifier: ^0.3.75
+        version: 0.3.75(@opentelemetry/api@1.9.0)(openai@5.20.0(ws@8.18.3)(zod@3.25.76))
       '@langchain/openai':
         specifier: ^0.6.11
         version: 0.6.11(@langchain/core@0.3.75(@opentelemetry/api@1.9.0)(openai@5.20.0(ws@8.18.3)(zod@3.25.76)))(ws@8.18.3)
